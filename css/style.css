@@ -1,0 +1,11 @@
+body {
+	background: #145A32;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+svg {
+	width: 200px;
+	fill: #fff;
+}
