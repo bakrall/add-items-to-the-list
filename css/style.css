@@ -6,6 +6,7 @@ html {
 	min-height: 100vh;
 	text-align: center;
 	box-sizing: border-box;
+	font-family: Futura,"Trebuchet MS",Arial,sans-serif
 }
 
 * {
@@ -16,4 +17,14 @@ svg {
 	width: 200px;
 	fill: #fff;
 	padding: 20px;
+	background: rgba(0,0,0,0.1);
+	border-radius: 50%;
+	margin-bottom: 50px;
+}
+
+.wrapper {
+	max-width: 350px;
+	background: rgba(255,255,255,0.95);
+	padding: 20px;
+	box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
 }
