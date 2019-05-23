@@ -5,11 +5,13 @@ const addItems = document.querySelector('.add-items'),
 	function addItem(e) {
 		e.preventDefault(); //stop the page from reloading on submit
 		const text = this.querySelector('[name=item]').value;
-		
+
 		const item = {
-			text: 'Item Name',
-			done: false
+			text, //shorthand for text: text
+			done: false //whether item is ticked
 		}
+
+		this.reset();
 	}
 
 	addItems.addEventListener('submit', addItem);
