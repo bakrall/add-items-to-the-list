@@ -20,6 +20,7 @@ function addItem(e) {
 we set default "plates" as empty array - if we forget to pass in something, it is not gonna break js, but it is gonna 
 loop over empty array 
 
+join() is needed at the end, because map returns an array, and if we use "innerHTML" we need to have one big string
  */
 function populateList(plates = [], platesList) {
 	platesList.innerHTML = plates.map((plate, i) => {

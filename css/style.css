@@ -40,6 +40,32 @@ h2 {
 	text-align: left;
 }
 
+.plates li {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    padding: 10px 0;
+    font-weight: 100;
+}
+
+.plates label {
+	flex: 1;
+	cursor: pointer;
+}
+
+.plates input {
+	display: none;
+}
+
+.plates input + label::before {
+  content: '⬜️';
+  margin-right: 10px;
+}
+
+.plates input:checked + label::before {
+	font-family: "Font Awesome 5 Free";
+	content: "\f14a";
+}
+
 .add-items input {
   	padding: 10px;
   	border: 1px solid rgba(0,0,0,0.1);
