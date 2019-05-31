@@ -34,7 +34,19 @@ function populateList(plates = [], platesList) {
 	}).join('');
 }
 
-addItems.addEventListener('submit', addItem);
+function toggleDone(e) {
+	if (!e.target.matches('input')) return; //thanks to it we get only input checks, otherwise, with event delegation, we may get different event targets
 
-populateList(items, itemsList);
+	const el = e.target,
+		index = el.dataset.index;
+
+	items[index].done = !items[index].done;
+	localStorage.setItem('items', JSON.stringify(items));
+	populateList(items, itemsList);
+}
+
+addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
+
+populateList(items, itemsList); //populate with already added items on page load
 
