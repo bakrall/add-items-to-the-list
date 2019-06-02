@@ -1,6 +1,8 @@
 const addItems = document.querySelector('.add-items'),
 	itemsList = document.querySelector('.plates'),
-	items = JSON.parse(localStorage.getItem('items')) || [];
+	resetButton = document.querySelector('input[type="reset"]');
+
+let items = JSON.parse(localStorage.getItem('items')) || [];
 
 function addItem(e) {
 	e.preventDefault(); //stop the page from reloading on submit
@@ -45,8 +47,15 @@ function toggleDone(e) {
 	populateList(items, itemsList);
 }
 
+function customReset() {
+	localStorage.clear();
+	items = [];
+	populateList(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
+resetButton.addEventListener('click', customReset);
 
 populateList(items, itemsList); //populate with already added items on page load
 
