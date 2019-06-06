@@ -50,9 +50,13 @@ function toggleDone(e) {
 }
 
 function customReset() {
-	localStorage.clear();
-	items = [];
-	populateList(items, itemsList);
+	const confirmation = confirm("Are you sure you want to delete existing list?");
+
+	if (confirmation) {
+		localStorage.clear();
+		items = [];
+		populateList(items, itemsList);
+	}
 }
 
 function selectAll(e) {
