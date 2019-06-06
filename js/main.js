@@ -1,6 +1,8 @@
 const addItems = document.querySelector('.add-items'),
 	itemsList = document.querySelector('.plates'),
-	resetButton = document.querySelector('input[type="reset"]');
+	resetButton = document.querySelector('button[type="reset"]'),
+	selectAllButton = document.querySelector('.select-all'),
+	deselectAllButton = document.querySelector('.deselect-all');
 
 let items = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -53,9 +55,21 @@ function customReset() {
 	populateList(items, itemsList);
 }
 
+function selectAll(e) {
+	items.forEach((item, index) => item.done = true);
+	populateList(items, itemsList);
+}
+
+function deselectAll(e) {
+	items.forEach((item, index) => item.done = false);
+	populateList(items, itemsList);
+}
+
 addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 resetButton.addEventListener('click', customReset);
+selectAllButton.addEventListener('click', selectAll);
+deselectAllButton.addEventListener('click', deselectAll);
 
 populateList(items, itemsList); //populate with already added items on page load
 

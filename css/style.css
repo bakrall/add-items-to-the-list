@@ -66,7 +66,8 @@ h2 {
 	content: "\f14a";
 }
 
-.add-items input {
+.add-items input,
+.add-items button {
   	padding: 10px;
   	border: 1px solid rgba(0,0,0,0.1);
 }	
